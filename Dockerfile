@@ -18,4 +18,3 @@ ADD workspace /home/${USER}/workspace/
 
 RUN pip3 install --upgrade pip
 RUN pip3 install opencv-python
-
