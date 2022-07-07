@@ -19,9 +19,10 @@ RUN apt-get install -y --no-install-recommends \
     libxrender1 \
     libxext6
 
-USER $USER
-WORKDIR /home/${USER}/
-ADD workspace /home/${USER}/workspace/
-
 RUN pip3 install --upgrade pip
-RUN python3 -m pip install opencv-python
+RUN python3 -m pip install opencv-contrib-python
+
+USER $USER
+RUN mkdir /home/${USER}/exit_velocity
+WORKDIR /home/${USER}/exit_velocity
+COPY ./ /home/${USER}/exit_velocity
